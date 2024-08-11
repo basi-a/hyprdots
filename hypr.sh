@@ -23,6 +23,7 @@ link_dotfiles(){
     ln -sf hypr $HOME/.config/hypr
     ln -sf kitty $HOME/.config/kitty
     ln -sf mako $HOME/.config/mako
+    ln -sf wallpaper $HOME/.config/wallpaper
 }
 
 install(){
