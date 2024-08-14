@@ -1,8 +1,12 @@
 {
     "layer": "top",
-    "position": "top", 
-    "height": 40, 
+    "position": "top",  
     "spacing": 6,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "height": 40,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
     "modules-right": ["tray", "network", "pulseaudio", "memory", "cpu", "clock"],
@@ -22,7 +26,8 @@
     "clock": {
         "interval": 1,
         "format": "\uf017 {:%H:%M:%S}",
-        "format-alt": "\uf133 {:%Y-%m-%d %H:%M:%S}"
+        "format-alt": "\uf133 {:%Y-%m-%d %H:%M:%S}",
+	"tooltip": false
     },
     "cpu": {
         "interval": 1,
