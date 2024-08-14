@@ -19,11 +19,13 @@ install_fonts(){
 }
 
 link_dotfiles(){
-    ln -sf waybar $HOME/.config/waybar
-    ln -sf hypr $HOME/.config/hypr
-    ln -sf kitty $HOME/.config/kitty
-    ln -sf mako $HOME/.config/mako
-    ln -sf wallpaper $HOME/.config/wallpaper
+    current=$(pwd)
+    ln -sf ${current}waybar $HOME/.config/waybar
+    ln -sf ${current}/hypr $HOME/.config/hypr
+    ln -sf ${current}/kitty $HOME/.config/kitty
+    ln -sf ${current}/mako $HOME/.config/mako
+    ln -sf ${current}/wallpaper $HOME/.config/wallpaper
+    ln -sf ${current}/*flags.conf $HOME/.config/
 }
 
 install(){
