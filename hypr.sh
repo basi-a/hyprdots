@@ -1,6 +1,6 @@
 #!/bin/bash
 install_hyprland(){
-    sudo pacman -S hyprland thunar mako kitty wofi
+    sudo pacman -S hyprland thunar gvfs mako kitty wofi
 }
 
 install_commonly_used_software(){
@@ -26,6 +26,10 @@ link_dotfiles(){
     ln -sf ${current}/mako $HOME/.config/mako
     ln -sf ${current}/wallpaper $HOME/.config/wallpaper
     ln -sf ${current}/*flags.conf $HOME/.config/
+    if [ ! -d "$HOME/.config/xfce4" ];then
+	mkdir $HOME/.config/xfce4
+    fi
+    ln -sf ${current}/xfce4/helpers.rc $HOME/.config/xfce4/
 }
 
 install(){
