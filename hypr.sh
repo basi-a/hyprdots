@@ -1,6 +1,6 @@
 #!/bin/bash
 install_hyprland(){
-    sudo pacman -S hyprland thunar gvfs mako kitty wofi swww waybar
+    sudo pacman -S hyprland hyprlock thunar gvfs mako kitty wofi swww waybar
 }
 
 install_commonly_used_software(){
