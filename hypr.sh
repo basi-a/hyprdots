@@ -1,6 +1,6 @@
 #!/bin/bash
 install_hyprland(){
-    sudo pacman -S hyprland thunar gvfs mako kitty wofi
+    sudo pacman -S hyprland thunar gvfs mako kitty wofi swww waybar
 }
 
 install_commonly_used_software(){
@@ -20,16 +20,21 @@ install_fonts(){
 
 link_dotfiles(){
     current=$(pwd)
-    ln -sf ${current}waybar $HOME/.config/waybar
-    ln -sf ${current}/hypr $HOME/.config/hypr
-    ln -sf ${current}/kitty $HOME/.config/kitty
-    ln -sf ${current}/mako $HOME/.config/mako
-    ln -sf ${current}/wallpaper $HOME/.config/wallpaper
+    rm -rf $HOME/.config/hypr
+    rm -rf $HOME/.config/kitty
+    rm -rf $HOME/.config/waybar
+    rm -rf $HOME/.config/mako
+    rm -rf $HOME/.config/wallpaper
+    rm -rf $HOME/.config/xfce4
+    rm -rf $HOME/.config/wofi
+    ln -sf ${current}/waybar $HOME/.config/
+    ln -sf ${current}/hypr $HOME/.config/
+    ln -sf ${current}/kitty $HOME/.config/
+    ln -sf ${current}/mako $HOME/.config/
+    ln -sf ${current}/wallpaper $HOME/.config/
     ln -sf ${current}/*flags.conf $HOME/.config/
-    if [ ! -d "$HOME/.config/xfce4" ];then
-	mkdir $HOME/.config/xfce4
-    fi
-    ln -sf ${current}/xfce4/helpers.rc $HOME/.config/xfce4/
+    ln -sf ${current}/xfce4 $HOME/.config/
+    ln -sf ${current}/wofi $HOME/.config/
 }
 
 install(){

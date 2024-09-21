@@ -42,11 +42,11 @@
     "network": {
         "interval": 1,
         "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": "\uf796 {bandwidthUpBits} {bandwidthDownBits}",
-        "format-linked": " {ifname} (No IP)",
+        "format-ethernet": " {bandwidthUpBits} {bandwidthDownBits}",
+        "format-linked": " {ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": " {ifname} {ipaddr}/{cidr} via {gwaddr}",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "tooltip-format": " {ifname} {ipaddr}/{cidr} via {gwaddr}",
+        "format-alt": " {ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         "scroll-step": 5,
