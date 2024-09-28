@@ -9,7 +9,7 @@ install_commonly_used_software(){
     # obs
     sudo pacman -S obs-studio xdg-desktop-portal-hyprland
 
-    sudo pacman -S feh w3m slurp grim
+    sudo pacman -S feh w3m slurp grim wl-clipboard cliphist
 }
 
 install_fonts(){
