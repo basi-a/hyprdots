@@ -1,0 +1,8 @@
+#!/bin/bash
+latest=$(xclip -o 2>/dev/null)
+while true; do
+    new=$(xclip -o 2>/dev/null)
+    if [ "$new" != "$latest" ];then
+	echo "$new" | wl-copy
+    fi
+done
