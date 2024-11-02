@@ -11,7 +11,7 @@ install_commonly_used_software(){
 
     sudo pacman -S feh w3m slurp grim wl-clipboard cliphist xclip
 
-    sudo pacman -S ranger python-pillow
+    sudo pacman -S yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick
 }
 
 install_fonts(){
@@ -29,7 +29,7 @@ link_dotfiles(){
     rm -rf $HOME/.config/wallpaper
     rm -rf $HOME/.config/xfce4
     rm -rf $HOME/.config/wofi
-    rm -rf $HOME/.config/ranger
+    rm -rf $HOME/.config/yazi
     ln -sf ${current}/waybar $HOME/.config/
     ln -sf ${current}/hypr $HOME/.config/
     ln -sf ${current}/kitty $HOME/.config/
@@ -38,7 +38,7 @@ link_dotfiles(){
     ln -sf ${current}/*flags.conf $HOME/.config/
     ln -sf ${current}/xfce4 $HOME/.config/
     ln -sf ${current}/wofi $HOME/.config/
-    ln -sf ${current}/ranger $HOME/.config/
+    ln -sf ${current}/yazi $HOME/.config/
 }
 
 install(){
