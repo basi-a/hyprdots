@@ -11,7 +11,7 @@ install_commonly_used_software(){
 
     sudo pacman -S feh w3m slurp grim wl-clipboard cliphist xclip
 
-    sudo pacman -S yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick
+    sudo pacman -S yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick mpv
 }
 
 install_fonts(){
