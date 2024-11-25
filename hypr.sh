@@ -1,6 +1,6 @@
 #!/bin/bash
 install_hyprland(){
-    sudo pacman -S hyprland hyprlock hypridle thunar gvfs mako kitty wofi swww waybar
+    sudo pacman -S hyprland hyprlock hypridle thunar gvfs mako kitty wofi swww waybar pavucontrol
 }
 
 install_commonly_used_software(){
@@ -11,7 +11,7 @@ install_commonly_used_software(){
 
     sudo pacman -S feh w3m slurp grim wl-clipboard cliphist xclip
 
-    sudo pacman -S yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick mpv
+    sudo pacman -S yazi ffmpeg thumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick mpv
 }
 
 install_fonts(){
