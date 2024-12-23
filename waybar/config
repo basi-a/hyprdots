@@ -63,6 +63,6 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click-right": "pavucontrol"
+        "on-click-right": "kitty alsamixer"
     }
 }
