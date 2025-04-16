@@ -1,34 +1,60 @@
 #!/bin/bash
 
-# This script will randomly go through the files of a directory, setting it
-# up as the wallpaper at regular intervals
-#
-# NOTE: this script uses bash (not POSIX shell) for the RANDOM variable
-
-if [[ $# -lt 1 ]] || [[ ! -d $1   ]]; then
-	echo "Usage:
-	$0 <dir containing images>"
-	exit 1
+if [[ $# -lt 1 ]] || [[ ! -d $1 ]]; then
+  echo "Usage: $0 <图片目录>"
+  exit 1
 fi
 
-# Edit below to control the images transition
 export SWWW_TRANSITION_FPS=59
 export SWWW_TRANSITION_STEP=2
 export SWWW_TRANSITION_TYPE=random
+INTERVAL=10
 
-# This controls (in seconds) when to switch to the next image
-INTERVAL=300
+# 初始化变量
+declare -a prev_images=()
+current_img=""
+
+# 获取符合条件的图片列表（支持子目录）
+get_img_list() {
+  find "$1" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \)
+}
 
 while true; do
-	find "$1" \
-		| while read -r img; do
-			echo "$((RANDOM % 1000)):$img"
-		done \
-		| sort -n | cut -d':' -f2- \
-		| while read -r img; do
-            if [[ "$img" != "$1" ]]; then
-			    swww img "$img"
-			    sleep $INTERVAL
-            fi 
-		done
+  # 获取最新图片列表
+  mapfile -t img_list < <(get_img_list "$1")
+
+  # 如果无可用图片则等待
+  if [[ ${#img_list[@]} -eq 0 ]]; then
+    echo "目录中未找到图片！"
+    sleep 10
+    continue
+  fi
+
+  # 如果只有一张图片则直接使用
+  if [[ ${#img_list[@]} -eq 1 ]]; then
+    new_img=${img_list[0]}
+  else
+    # 排除最近显示过的图片（最近 N 张不重复）
+    candidates=()
+    for img in "${img_list[@]}"; do
+      [[ ! " ${prev_images[@]} " =~ " $img " ]] && candidates+=("$img")
+    done
+
+    # 如果候选图片用完则重置
+    [[ ${#candidates[@]} -eq 0 ]] && candidates=("${img_list[@]}")
+
+    # 随机选择新图片
+    new_img=${candidates[$RANDOM % ${#candidates[@]}]}
+  fi
+
+  # 更新历史记录（保留最近 3 张记录）
+  prev_images=("$new_img" "${prev_images[@]:0:2}")
+
+  # 切换壁纸
+  if [[ "$current_img" != "$new_img" ]]; then
+    swww img "$new_img"
+    current_img="$new_img"
+  fi
+
+  sleep $INTERVAL
 done
