@@ -3,6 +3,8 @@ install_hyprland() {
   sudo pacman -S hyprland hyprlock hypridle hyprpicker hyprpolkitagent thunar gvfs mako kitty wofi swww waybar pavucontrol brightnessctl polkit
   # https://github.com/Gustash/hyprshot.git
   paru -S hyprshot
+  # https://font.subf.dev/zh-cn/download/
+  paru -S ttf-maplemono-nf-cn-unhinted
 }
 
 install_commonly_used_software() {
