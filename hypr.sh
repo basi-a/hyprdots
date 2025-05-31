@@ -5,6 +5,10 @@ install_hyprland() {
   paru -S hyprshot
   # https://font.subf.dev/zh-cn/download/
   paru -S ttf-maplemono-nf-cn-unhinted
+  # https://hyprpanel.com/getting_started/installation.html
+  paru -S aylurs-gtk-shell-git wireplumber libgtop bluez bluez-utils btop networkmanager dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git hyprpicker matugen-bin python-gpustat hyprsunset-git
+  paru -S hyprsunset python-pywal pacman-contrib power-profiles-daemon grimblast-git wf-recorder hyprsunset matugen-bin
+  paru -S ags-hyprpanel-git
 }
 
 install_commonly_used_software() {
@@ -34,6 +38,7 @@ link_dotfiles() {
   rm -rf $HOME/.config/xfce4
   rm -rf $HOME/.config/wofi
   rm -rf $HOME/.config/yazi
+  rm -rf $HOME/.config/hyprpanel
   ln -sf ${current}/waybar $HOME/.config/
   ln -sf ${current}/hypr $HOME/.config/
   ln -sf ${current}/kitty $HOME/.config/
@@ -43,6 +48,7 @@ link_dotfiles() {
   ln -sf ${current}/xfce4 $HOME/.config/
   ln -sf ${current}/wofi $HOME/.config/
   ln -sf ${current}/yazi $HOME/.config/
+  ln -sf ${current}/hyprpanel $HOME/.config/
 }
 
 install() {

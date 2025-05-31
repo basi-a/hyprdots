@@ -1,0 +1,114 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "bar.battery.label": false,
+  "bar.battery.hideLabelWhenFull": false,
+  "theme.bar.buttons.systray.enableBorder": false,
+  "menus.power.showLabel": true,
+  "menus.power.confirmation": true,
+  "notifications.displayedTotal": 2,
+  "bar.clock.format": "%T",
+  "bar.notifications.show_total": false,
+  "bar.notifications.hideCountWhenZero": false,
+  "menus.dashboard.powermenu.confirmation": true,
+  "menus.clock.time.military": true,
+  "menus.clock.time.hideSeconds": false,
+  "menus.clock.weather.location": "Beijing",
+  "theme.bar.floating": false,
+  "bar.autoHide": "fullscreen",
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.border.location": "none",
+  "theme.bar.enableShadow": false,
+  "theme.bar.menus.background": "#11111b",
+  "theme.bar.menus.border.color": "#313244",
+  "theme.bar.transparent": true,
+  "theme.bar.buttons.style": "default",
+  "theme.matugen_settings.mode": "dark",
+  "theme.bar.menus.border.radius": "0.7em",
+  "theme.bar.buttons.background": "#242438",
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "menus.media.hideAuthor": false,
+  "menus.media.hideAlbum": false,
+  "menus.media.displayTime": false,
+  "menus.media.displayTimeTooltip": false,
+  "menus.dashboard.shortcuts.enabled": true,
+  "menus.dashboard.shortcuts.left.shortcut4.command": "wofi --show drun",
+  "scalingPriority": "hyprland",
+  "theme.bar.border.width": "0.15em",
+  "theme.bar.buttons.innerRadiusMultiplier": "0.4",
+  "bar.launcher.autoDetectIcon": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.show_icons": false,
+  "theme.bar.buttons.workspaces.smartHighlight": true,
+  "theme.bar.menus.scroller.radius": "0.7em",
+  "theme.matugen_settings.variation": "standard_1",
+  "theme.matugen": false,
+  "menus.dashboard.controls.enabled": true,
+  "theme.bar.buttons.borderSize": "0.1em",
+  "theme.bar.outer_spacing": "0.6em",
+  "menus.transition": "crossfade",
+  "menus.transitionTime": 200,
+  "theme.bar.menus.menu.dashboard.scaling": 75,
+  "theme.bar.buttons.dashboard.enableBorder": false,
+  "bar.workspaces.monitorSpecific": true,
+  "theme.bar.buttons.modules.kbLayout.enableBorder": false,
+  "theme.bar.buttons.modules.updates.enableBorder": false,
+  "theme.bar.menus.menu.dashboard.profile.radius": "0.4em",
+  "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
+  "bar.customModules.storage.tooltipStyle": "percentage-bar",
+  "theme.bar.buttons.modules.netstat.enableBorder": false,
+  "theme.osd.location": "right",
+  "theme.osd.orientation": "vertical",
+  "tear": false,
+  "hyprpanel.restartAgs": true
+}
