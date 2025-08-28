@@ -34,6 +34,7 @@ link_dotfiles() {
   rm -rf $HOME/.config/xfce4
   rm -rf $HOME/.config/wofi
   rm -rf $HOME/.config/yazi
+  rm -rf $HOME/.config/zellij
   ln -sf ${current}/waybar $HOME/.config/
   ln -sf ${current}/hypr $HOME/.config/
   ln -sf ${current}/kitty $HOME/.config/
@@ -43,6 +44,7 @@ link_dotfiles() {
   ln -sf ${current}/xfce4 $HOME/.config/
   ln -sf ${current}/wofi $HOME/.config/
   ln -sf ${current}/yazi $HOME/.config/
+  ln -sf ${current}/zellij $HOME/.config/
 }
 
 install() {
