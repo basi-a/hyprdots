@@ -272,12 +272,12 @@ plugins {
 // eg. "https://example.com/my-plugin.wasm"
 // Plugins to load in the background when a new session starts
 load_plugins {
-    "file:~/.config/zellij/plugins/zjframes.wasm" {
-        hide_frame_for_single_pane       "true"
-        hide_frame_except_for_search     "true"
-        hide_frame_except_for_scroll     "true"
-        hide_frame_except_for_fullscreen "true"
-    }
+    //"file:~/.config/zellij/plugins/zjframes.wasm" {
+    //    hide_frame_for_single_pane       "true"
+    //    hide_frame_except_for_search     "true"
+    //    hide_frame_except_for_scroll     "true"
+    //    hide_frame_except_for_fullscreen "true"
+    //}
 }
 web_client {
     font "monospace"
@@ -338,7 +338,7 @@ theme "dracula"
 //   - true (default, enabled)
 //   - false
 // 
-pane_frames false
+pane_frames true
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
