@@ -1,22 +1,37 @@
 {
     "layer": "top",
-    "position": "top",  
+    "position": "top",
     "spacing": 6,
     "margin-top": 0,
     "margin-left": 0,
     "margin-right": 0,
     "margin-bottom": 0,
     "height": 40,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": [
+        "niri/workspaces",
+        "custom/window"
+    ],
     "modules-center": [],
-    "modules-right": ["tray", "network", "pulseaudio", "memory", "cpu", "clock"],
-    "hyprland/workspaces": {
+    "modules-right": [
+        "tray",
+        "network",
+        "pulseaudio",
+        "memory",
+        "cpu",
+        "clock"
+    ],
+    "niri/workspaces": {
         "format": "{icon}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
     },
-    "hyprland/window": {
-        "format": "\uf061 {}",
+    "custom/window": {
+        "exec": "$HOME/.config/waybar/niri/window.sh",
+        "format": "\uf061 {text}",
+        "interval": 1,
+        "return-type": "json",
         "separate-outputs": true
     },
     "tray": {
@@ -27,7 +42,7 @@
         "interval": 1,
         "format": "\uf017 {:%H:%M:%S}",
         "format-alt": "\uf133 {:%Y-%m-%d %H:%M:%S}",
-	"tooltip": false
+        "tooltip": false
     },
     "cpu": {
         "interval": 1,
@@ -61,7 +76,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click-right": "pavucontrol"
     }

@@ -63,10 +63,15 @@ window#waybar.hidden {
 #pulseaudio,
 #tray,
 #mode,
-#window {
+#window,
+#custom-window {
     margin-top: 6px;
     padding: 0 12px;
-    color: #ffffff;
+    /*color: #ffffff;*/
+    font-family: 'Maple Mono NF CN', 'Fira Mono', 'Noto Sans CJK SC', sans-serif;
+    font-weight: 400;
+    background-color: #cbecff;
+    color: #000000;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -108,9 +113,3 @@ window#waybar.hidden {
     background-color: rgba(16, 20, 24, 0.5);
 }
 
-#window {
-    font-family: 'Maple Mono NF CN', 'Fira Mono', 'Noto Sans CJK SC', sans-serif;
-    font-weight: 400;
-    background-color: #cbecff;
-    color: #000000;
-}
