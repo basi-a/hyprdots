@@ -52,7 +52,7 @@ while true; do
 
   # 切换壁纸
   if [[ "$current_img" != "$new_img" ]]; then
-    swww img "$new_img"
+    awww img "$new_img"
     current_img="$new_img"
   fi
 

@@ -86,7 +86,7 @@ exec-once = /usr/lib/polkit-kde-authentication-agent-1 &
 exec-once = $HOME/.config/hypr/scripts/xdg.sh
 #exec-once = $HOME/.config/hypr/scripts/xclip2wlcopy &
 #exec-once = wl-paste --watch cliphist store &
-exec-once = swww-daemon
+exec-once = awww-daemon
 exec-once = udiskie
 exec-once = hypridle
 exec-once = $HOME/.config/hypr/scripts/swww-random $HOME/.config/wallpaper/ &
@@ -154,7 +154,6 @@ animations {
 
 # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
 dwindle {
-    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
     preserve_split = true # You probably want this
 }
 
@@ -167,7 +166,6 @@ master {
 misc { 
     force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
     disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
-    vfr = true
     focus_on_activate = true
 }
 
@@ -225,7 +223,7 @@ bind = $mainMod, F, togglefloating,
 ##bind = $mainMod, R, exec, $menu
 bind = $mainMod, R, exec, vicinae toggle
 #bind = alt, R, exec, $run
-bind = $mainMod, P, pseudo, # dwindle
+bind = $mainMod, P, pseudo, # dwindlef
 bind = $mainMod, J, togglesplit, # dwindle
 bind = $mainMod, L, exec, $screenlocker
 bind = , print, exec, $screenshot
