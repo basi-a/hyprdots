@@ -393,3 +393,15 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+hl.window_rule({
+    name = "no-focus-arturia",
+    match = {
+        class = "pigments.exe|analog lab v.exe",
+		title = "negative:^(Pigments|Analog Lab V)$",
+    },
+    no_focus = true,
+	stay_focused = true,
+    float = true, 
+})
+
