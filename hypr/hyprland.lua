@@ -96,6 +96,8 @@ hl.config({
 })
 
 hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
+hl.permission("/usr/(bin|local/bin)/hyprlock", "screencopy", "allow")
+hl.permission("/usr/(bin|local/bin)/hyprpicker", "screencopy", "allow")
 hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 
@@ -344,6 +346,9 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
+hl.bind("ALT + Print", hl.dsp.exec_cmd(screenshotCopy))
+hl.bind(mainMod .. "+ L", hl.dsp.exec_cmd(screenlocker))
+
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
@@ -371,7 +376,7 @@ hl.window_rule({
 		xwayland = true,
 		float = true,
 		fullscreen = false,
-		pin = false,
+		pin = true,
 	},
 
 	no_focus = true,
@@ -395,13 +400,28 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "no-focus-arturia",
-    match = {
-        class = "pigments.exe|analog lab v.exe",
+	name = "no-focus-arturia",
+	match = {
+		class = "pigments.exe|analog lab v.exe",
 		title = "negative:^(Pigments|Analog Lab V)$",
-    },
-    no_focus = true,
+	},
+	no_focus = true,
 	stay_focused = true,
-    float = true, 
+	float = true,
 })
 
+hl.window_rule({
+	name = "pianoteq",
+	match = {
+		class = "Pianoteq",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	name = "no-blur",
+	match = {
+		class = "chromium|Miwork-miwork",
+	},
+	opaque = true,
+})
